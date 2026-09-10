@@ -1,0 +1,14 @@
+[
+    {
+        "filepath": "C:/Users/kaush/ITIS_3200/lab02test/file1.txt",
+        "hash": "b6dd91b9f320a828221d2bd2baaf5048283003e056040bf833f35c0d653b61a6"
+    },
+    {
+        "filepath": "C:/Users/kaush/ITIS_3200/lab02test/file2.txt",
+        "hash": "2931b31dbdc162f6904bfbf165ddc69d946781e775f8c6c83eb8ca71a49248f5"
+    },
+    {
+        "filepath": "C:/Users/kaush/ITIS_3200/lab02test/file3.txt",
+        "hash": "e50aa7b1751ce8cdeb4df3e5eb01ab5d8971a4c0b9c8b8b0de402880993b771c"
+    }
+]
