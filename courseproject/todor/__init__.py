@@ -15,7 +15,7 @@ def create_app(config=None):
         DEBUG=os.environ.get("FLASK_DEBUG", "0") == "1",
         SECRET_KEY=os.environ.get("SECRET_KEY", "dev-only-not-for-production"),
         SQLALCHEMY_DATABASE_URI=os.environ.get("DATABASE_URL", "sqlite:///todolist.db"),
-        AUTHZ_MODE="rbac",
+        AUTHZ_MODE="baseline",
     )
     if config:
         app.config.update(config)

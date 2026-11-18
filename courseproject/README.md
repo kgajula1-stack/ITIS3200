@@ -5,6 +5,11 @@ manager and demonstrates the same task access in two modes: a vulnerable,
 login-only baseline and a hardened RBAC implementation. It is a small
 educational demonstration, not a production-ready task service.
 
+This checkout is the **`baseline` branch**: the default app mode intentionally
+omits authorization checks and is restricted to loopback. The **`hardened`**
+branch defaults to RBAC. Keep the baseline local; do not deploy it or use real
+accounts/data.
+
 ## Approved project proposal
 
 - **System:** a multi-user task management web app. Each task has an owner; users
