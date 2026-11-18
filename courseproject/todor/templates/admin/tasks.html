@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Admin task view{% endblock %}
+
+{% block content %}
+<main class="container mt-4">
+    <h1>All tasks</h1>
+    <p>This administrative view is available only to the admin role in RBAC mode.</p>
+    {% if todos %}
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr><th>ID</th><th>Owner</th><th>Title</th><th>State</th></tr>
+            </thead>
+            <tbody>
+                {% for todo in todos %}
+                <tr>
+                    <td>{{ todo.id }}</td>
+                    <td>{{ todo.owner.username }}</td>
+                    <td>{{ todo.title }}</td>
+                    <td>{{ todo.state }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+    <p>No tasks are available.</p>
+    {% endif %}
+</main>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit task {{ todo.id }}{% endblock %}
+
+{% block content %}
+<main class="container mt-4">
+    <h1>Task {{ todo.id }}</h1>
+    <p class="text-muted">Owner: {{ todo.owner.username }}</p>
+    <form method="post">
+        <div class="mb-3">
+            <label class="form-label" for="title">Title</label>
+            <input class="form-control" id="title" name="title" value="{{ todo.title }}" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="desc">Description</label>
+            <textarea class="form-control" id="desc" name="desc">{{ todo.desc or '' }}</textarea>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="state">State</label>
+            <select class="form-select" id="state" name="state">
+                {% for state in ['not_started', 'in_progress', 'completed'] %}
+                <option value="{{ state }}" {% if todo.state == state %}selected{% endif %}>{{ state.replace('_', ' ') }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <button class="btn btn-primary" type="submit">Save changes</button>
+        <a class="btn btn-secondary" href="{{ url_for('todo.index') }}">Back to tasks</a>
+    </form>
+</main>
+{% endblock %}
